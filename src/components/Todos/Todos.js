@@ -11,6 +11,8 @@ const Todos = (props) => {
             title={todo.title}
             description={todo.description}
             key={todo.key}
+            id={todo.id}
+            onDelete={props.onDelete}
           />
         );
       })}

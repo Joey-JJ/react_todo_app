@@ -17,6 +17,7 @@ const AddTodo = (props) => {
     e.preventDefault();
     const newTodo = {
       key: Math.random(),
+      id: Math.random(),
       title: todoTitle,
       description: todoDescription,
     };
@@ -33,16 +34,20 @@ const AddTodo = (props) => {
 
   return (
     <form className="AddTodo-form" onSubmit={submitHandler}>
+      <label htmlFor="todo-title">Title</label>
       <input
         type="text"
+        name="todo-title"
         value={todoTitle}
-        placeholder="Title"
+        placeholder="Enter your title here..."
         onChange={titleInputHandler}
       />
+      <label htmlFor="todo-desc">Description</label>
       <input
         type="text"
+        name="todo-desc"
         value={todoDescription}
-        placeholder="Description"
+        placeholder="Enter your description here..."
         onChange={descriptionInputHandler}
       />
       <Button type="submit">Add Todo</Button>

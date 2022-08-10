@@ -7,11 +7,13 @@ import Todos from "./components/Todos/Todos";
 const DUMMYDATA = [
   {
     key: Math.random(),
+    id: Math.random(),
     title: "Clean the house",
     description: "Do it by tomorrow",
   },
   {
     key: Math.random(),
+    id: Math.random(),
     title: "Walk the dog",
     description: "He needs to poop",
   },
@@ -26,12 +28,20 @@ const App = () => {
     });
   };
 
+  const deleteTodo = (todoId) => {
+    setTodos((prevState) => {
+      return prevState.filter((todo) => {
+        return todo.id !== todoId;
+      });
+    });
+  };
+
   return (
     <div className="App">
       <Title />
       <AddTodo onAdd={addNewTodo} />
       {todos.length > 0 ? (
-        <Todos data={todos} />
+        <Todos data={todos} onDelete={deleteTodo} />
       ) : (
         <p>No Todos at the moment</p>
       )}
