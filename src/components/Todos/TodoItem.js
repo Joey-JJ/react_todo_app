@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../UI/Button";
-import "./TodoItem.css";
+import styles from "./TodoItem.module.css";
 
 const TodoItem = (props) => {
   const deleteHandler = () => {
@@ -8,10 +8,12 @@ const TodoItem = (props) => {
   };
 
   return (
-    <li className="todo-item">
+    <li className={styles["todo-item"]}>
       <input type="checkbox" />
-      <h2 className="todo-item__title">{props.title}</h2>
-      <p className="todo-item__description">{props.description}</p>
+      <div className={styles["todo-item__contents"]}>
+        <h2 className={styles["todo-item__title"]}>{props.title}</h2>
+        <p className={styles["todo-item__description"]}>{props.description}</p>
+      </div>
       <Button onClick={deleteHandler}>Delete</Button>
     </li>
   );

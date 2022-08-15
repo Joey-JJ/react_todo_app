@@ -1,0 +1,23 @@
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.5rem;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 1rem;
+}
+
+.todo-item:last-child {
+  border: none;
+  padding: 0;
+}
+
+.todo-item__contents {
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-item__title,
+.todo-item__description {
+  color: #ddd;
+}

@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgb(163, 163, 163), rgb(35, 35, 35));
+}
+
+.App {
+  border: 3px solid #aaa;
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  margin-top: 5rem;
+  box-shadow: 10px 10px 5px #444;
+  min-width: 400px;
+  background-color: #333;
+  color: white;
+}

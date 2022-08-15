@@ -1,10 +1,10 @@
 import React from "react";
 import TodoItem from "./TodoItem";
-import "./Todos.css";
+import styles from "./Todos.module.css";
 
 const Todos = (props) => {
   return (
-    <ul className="todos">
+    <ul className={styles.todos}>
       {props.data.map((todo) => {
         return (
           <TodoItem

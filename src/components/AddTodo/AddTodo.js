@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "../UI/Button";
-import "./AddTodo.css";
+import styles from "./AddTodo.module.css";
 
 const AddTodo = (props) => {
   const [todoTitle, setTodoTitle] = useState("");
@@ -33,7 +33,7 @@ const AddTodo = (props) => {
   };
 
   return (
-    <form className="AddTodo-form" onSubmit={submitHandler}>
+    <form className={styles["addtodo-form"]} onSubmit={submitHandler}>
       <label htmlFor="todo-title">Title</label>
       <input
         type="text"
