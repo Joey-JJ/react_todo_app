@@ -1,14 +1,14 @@
 .button {
   border-radius: 10px;
-  border: 2px solid #aaa;
+  border: 2px solid white;
   text-transform: uppercase;
   font-weight: bold;
   transition: background 0.25s ease-in-out;
   padding: 0.5rem 0.75rem;
-  background: #888;
+  background: rgb(255, 102, 0);
   color: white;
 }
 
 .button:hover {
-  background-color: #666;
+  background-color: rgb(255, 55, 0);
 }

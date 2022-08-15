@@ -1,35 +1,28 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import Button from "../UI/Button";
 import styles from "./AddTodo.module.css";
 
 const AddTodo = (props) => {
-  const [todoTitle, setTodoTitle] = useState("");
-  const titleInputHandler = (e) => {
-    setTodoTitle(e.target.value);
-  };
-
-  const [todoDescription, setTodoDescription] = useState("");
-  const descriptionInputHandler = (e) => {
-    setTodoDescription(e.target.value);
-  };
+  const titleInput = useRef();
+  const descriptionInput = useRef();
 
   const submitHandler = (e) => {
     e.preventDefault();
     const newTodo = {
       key: Math.random(),
       id: Math.random(),
-      title: todoTitle,
-      description: todoDescription,
+      title: titleInput.current.value,
+      description: descriptionInput.current.value,
     };
     if (newTodo.title.trim().length === 0) {
-      setTodoTitle("");
-      setTodoDescription("");
+      titleInput.current.value = "";
+      descriptionInput.current.value = "";
       return;
     }
 
     props.onAdd(newTodo);
-    setTodoTitle("");
-    setTodoDescription("");
+    titleInput.current.value = "";
+    descriptionInput.current.value = "";
   };
 
   return (
@@ -38,17 +31,15 @@ const AddTodo = (props) => {
       <input
         type="text"
         name="todo-title"
-        value={todoTitle}
+        ref={titleInput}
         placeholder="Enter your title here..."
-        onChange={titleInputHandler}
       />
       <label htmlFor="todo-desc">Description</label>
       <input
         type="text"
         name="todo-desc"
-        value={todoDescription}
+        ref={descriptionInput}
         placeholder="Enter your description here..."
-        onChange={descriptionInputHandler}
       />
       <Button type="submit">Add Todo</Button>
     </form>
