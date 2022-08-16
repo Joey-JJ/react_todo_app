@@ -26,3 +26,7 @@
 .addtodo-form input:focus {
   border-color: black;
 }
+
+.addtodo-form button:last-child {
+  margin-top: 0.75rem;
+}

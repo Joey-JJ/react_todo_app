@@ -13,6 +13,8 @@ const Todos = (props) => {
             key={todo.key}
             id={todo.id}
             onDelete={props.onDelete}
+            onCheck={props.onCheck}
+            completed={todo.completed}
           />
         );
       })}

@@ -6,16 +6,18 @@ import Todos from "./components/Todos/Todos";
 
 const DUMMYDATA = [
   {
-    key: Math.random(),
-    id: Math.random(),
+    key: Math.random().toString(),
+    id: Math.random().toString(),
     title: "Clean the house",
     description: "Do it by tomorrow",
+    completed: true,
   },
   {
-    key: Math.random(),
-    id: Math.random(),
+    key: Math.random().toString(),
+    id: Math.random().toString(),
     title: "Walk the dog",
     description: "He needs to poop",
+    completed: false,
   },
 ];
 
@@ -36,12 +38,27 @@ const App = () => {
     });
   };
 
+  const checkTodo = (id, value) => {
+    setTodos((prevState) => {
+      return prevState.map((todo) => {
+        if (todo.id === id) {
+          todo.completed = value;
+        }
+        return todo;
+      });
+    });
+  };
+
+  const removedCompleted = () => {
+    setTodos((prevState) => prevState.filter((todo) => !todo.completed));
+  };
+
   return (
     <div className="App">
       <Title />
-      <AddTodo onAdd={addNewTodo} />
+      <AddTodo onAdd={addNewTodo} onRemoveCompleted={removedCompleted} />
       {todos.length > 0 ? (
-        <Todos data={todos} onDelete={deleteTodo} />
+        <Todos data={todos} onDelete={deleteTodo} onCheck={checkTodo} />
       ) : (
         <p>No Todos at the moment</p>
       )}

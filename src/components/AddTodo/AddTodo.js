@@ -9,11 +9,13 @@ const AddTodo = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     const newTodo = {
-      key: Math.random(),
-      id: Math.random(),
+      key: Math.random().toString(),
+      id: Math.random().toString(),
       title: titleInput.current.value,
       description: descriptionInput.current.value,
+      completed: false,
     };
+
     if (newTodo.title.trim().length === 0) {
       titleInput.current.value = "";
       descriptionInput.current.value = "";
@@ -42,6 +44,7 @@ const AddTodo = (props) => {
         placeholder="Enter your description here..."
       />
       <Button type="submit">Add Todo</Button>
+      <Button onClick={props.onRemoveCompleted}>Remove completed</Button>
     </form>
   );
 };
