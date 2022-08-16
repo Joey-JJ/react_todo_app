@@ -13,8 +13,8 @@
 }
 
 .todo-item__contents {
-  display: flex;
-  flex-direction: column;
+  overflow: scroll;
+  padding: 0 1rem;
 }
 
 .todo-item__title,
