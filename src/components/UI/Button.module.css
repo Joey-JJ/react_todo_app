@@ -1,6 +1,7 @@
 .button {
   border-radius: 10px;
   border: 2px solid rgb(255, 102, 0);
+  height: 2.5rem;
   text-transform: uppercase;
   font-weight: bold;
   transition: background 0.25s ease-in-out;
