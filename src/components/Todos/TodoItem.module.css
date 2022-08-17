@@ -6,6 +6,11 @@
   margin: 0.5rem;
   border-bottom: 1px solid #ddd;
   padding-bottom: 1rem;
+  transition: all 0.25s ease-in-out;
+}
+
+.todo-item:hover {
+  transform: translateY(-2%) translateX(2%);
 }
 
 .todo-item:last-child {
