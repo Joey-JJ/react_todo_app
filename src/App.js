@@ -4,25 +4,8 @@ import AddTodo from "./components/AddTodo/AddTodo";
 import "./App.css";
 import Todos from "./components/Todos/Todos";
 
-const DUMMYDATA = [
-  {
-    key: Math.random().toString(),
-    id: Math.random().toString(),
-    title: "Clean the house",
-    description: "Do it by tomorrow",
-    completed: true,
-  },
-  {
-    key: Math.random().toString(),
-    id: Math.random().toString(),
-    title: "Walk the dog",
-    description: "He needs to poop",
-    completed: false,
-  },
-];
-
 const App = () => {
-  const [todos, setTodos] = useState(DUMMYDATA);
+  const [todos, setTodos] = useState([]);
 
   const addNewTodo = (newTodo) => {
     setTodos((prevState) => {

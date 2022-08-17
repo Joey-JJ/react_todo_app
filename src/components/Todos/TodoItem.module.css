@@ -9,6 +9,22 @@
   transition: all 0.25s ease-in-out;
 }
 
+.todo-item.on-mount {
+  animation: on-mount 0.5s ease-in-out;
+}
+
+@keyframes on-mount {
+  0% {
+    opacity: 0.1;
+    transform: translateY(-20%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .todo-item:hover {
   transform: translateY(-2%) translateX(2%);
 }
